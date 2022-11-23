@@ -23,5 +23,10 @@ Create and activate environment
   
 ## 3. Output  
 rna_seq_ss.ps file will be reated with secondary strucure of RNA sequence.  
+  
+eGFP Secondary structure predicted  
+![eGFP](https://github.com/nidhi12k/design_mRNA/blob/main/eGFP/rna_seq_ss.ps)  
+  
+  
 
 
