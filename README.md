@@ -20,10 +20,7 @@ Create and activate environment
     python3 ./script/script.py -i <path to FASTA file with cDNA sequence>
   
   
-## 3. Output
-
-
-
-
+## 3. Output  
+rna_seq_ss.ps file will be reated with secondary strucure of RNA sequence.  
 
 
