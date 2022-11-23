@@ -7,6 +7,7 @@ A program to generate mRNA from cDNA sequences
 python=3.7  
 biopython  
 ViennaRNA
+rna-tools
 
 Create and activate environment  
 ```
