@@ -25,8 +25,9 @@ Create and activate environment
 rna_seq_ss.ps file will be reated with secondary strucure of RNA sequence.  
   
 eGFP Secondary structure predicted  
-![eGFP](https://github.com/nidhi12k/design_mRNA/blob/main/eGFP/rna_seq_ss.ps)  
+![eGFP](https://github.com/nidhi12k/design_mRNA/blob/main/eGFP/eGFP_ss_pred.png)  
   
-  
+TERC-201-cDNA Secondary structure predicted  
+![TERC-201](https://github.com/nidhi12k/design_mRNA/blob/main/TERC-201_cdna/TERC_201.png)  
 
 
