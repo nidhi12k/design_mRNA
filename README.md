@@ -6,7 +6,7 @@ A program to generate mRNA from cDNA sequences
 ## 1. Prerequisites
 python=3.7  
 biopython  
-ViennaRNA
+ViennaRNA  
 rna-tools
 
 Create and activate environment  
