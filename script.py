@@ -12,7 +12,9 @@ def command_Parse():
 	# def check_input(file):
 	#	pass
 
-	parser.add_argument("-i", "--input", help='Enter the path to the FASTA file', required=True)	
+	parser.add_argument("-i", "--input", help='Enter the path to the FASTA file', required=True)
+	parser.add_argument("-cdna", "--cdna", help='Set flag if the FASTA file contains cDNA sequence', required=False, action="store_true", default=False)
+	parser.add_argument("-cds", "--cds", help='Set flag if the FASTA file contains coding sequence', required=False, action="store_true", default=False)
 	return parser
 
 
@@ -27,16 +29,18 @@ def cdna2mrna(sequence) -> str:
 	mrnaSeq = str(Seq(sequence).complement())
 	mrnaSeq = mrnaSeq.upper().replace("T","U")
 	return mrnaSeq
-
-
-def mrna2protein(mrnaSeq):
-	return Seq(mrnaSeq).translate()
+# Get RNA sequence from CDS sequence
+def cds2mrna(seq):
+	mrnaSeq = seq.upper().replace("T","U")
+	return mrnaSeq
 
 def getSecondaryStructure(seq):
 	# creting a fold_compound object
 	fc = RNA.fold_compound(seq)
+	# fc = RNA.fold_compound(seq)
 	# compute minimum free energy and corresponding structure
 	ss, mfe = fc.mfe()
+	print("Minumum free energy: {:6.2f}".format(mfe))
 	return fc, ss, mfe
 
 
@@ -54,8 +58,16 @@ def main():
 	inputFile = args.input
 
 	sequence = read_fasta(inputFile)
-	mrnaSeq = cdna2mrna(sequence)
-	print(f"mRNA Sequence : {mrnaSeq}\n")
+
+	if args.cds:
+		mrnaSeq = cds2mrna(sequence)
+		print(f"mRNA Sequence : {mrnaSeq}\n")
+	elif args.cdna:
+		mrnaSeq = cdna2mrna(sequence)
+		print(f"mRNA Sequence : {mrnaSeq}\n")
+	else:
+		print("Please set flag -cds/--cds or -cdna/--cdna")
+		exit()
 
 	fc, ss, mfe=getSecondaryStructure(mrnaSeq)
 	drawss(ss, mrnaSeq)

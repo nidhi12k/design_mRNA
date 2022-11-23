@@ -17,7 +17,7 @@ Create and activate environment
     
 ##  2. Run
 
-    python3 ./script/script.py -i <path to FASTA file with cDNA sequence>
+    python3 ./script.py -i <path to FASTA file with cDNA sequence>
   
   
 ## 3. Output  
